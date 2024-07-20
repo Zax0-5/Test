@@ -1,5 +1,5 @@
 local args = {
-    [1] = "Rainbow Star"
+    [1] = "(txt)"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("BuyItemCash"):FireServer(unpack(args))
