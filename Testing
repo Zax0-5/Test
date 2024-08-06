@@ -1,5 +1,28 @@
-local args = {
-    [1] = "(txt)"
-}
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("TITLE", "DarkTheme")
 
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("BuyItemCash"):FireServer(unpack(args))
+--tabs
+local Tab1 = Window:NewTab("Buy Stuff")
+local Tab2 = Window:NewTab("Misc")
+
+-sections
+local Section1 = Tab:NewSection("Buy Stuff")
+local Section2 = Tab:NewSection("Testing paragraph")
+
+
+--buttons
+Section1:NewToggle("auto buy A", "auto buys A", function(state)
+    if state then
+        _G.on = true
+        while _G.on do
+            wait()
+local args = {
+                [1] = "A"
+            }
+            
+            game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+        end
+    else
+        _G.on = false
+    end
+end)
